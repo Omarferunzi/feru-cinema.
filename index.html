@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10151c">
+  <meta name="description" content="FERU CINEMA — an independent, offline-first film and series production workspace.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/feru-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>FERU CINEMA — Independent Film Studio</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="FERU CINEMA home"><span class="brand-mark">◉</span><span><b>FERU <i>CINEMA</i></b><small>INDEPENDENT FILM STUDIO</small></span></a>
+      <div class="top-actions"><span class="offline-state"><span class="dot"></span><span id="connection-label">LOCAL WORKSPACE</span></span><button class="icon-btn" id="install-btn" hidden>Install app</button><button class="icon-btn" id="backup-btn">Backup</button></div>
+    </header>
+    <div class="layout">
+      <nav class="sidebar" aria-label="Main navigation">
+        <p class="nav-label">WORKSPACE</p>
+        <button class="nav-item active" data-view="overview">◈ <span>Overview</span></button>
+        <button class="nav-item" data-view="productions">▣ <span>Productions</span></button>
+        <button class="nav-item" data-view="assets">▤ <span>Asset library</span></button>
+        <p class="nav-label">STUDIO</p>
+        <button class="nav-item" data-view="standards">✳ <span>FERU standards</span></button>
+        <div class="sidebar-note"><b>Independent by design</b><p>Your work stays on this device. No accounts, paid APIs or subscriptions.</p></div>
+      </nav>
+      <main id="main" tabindex="-1">
+        <section class="view active" id="view-overview">
+          <div class="hero"><div><p class="eyebrow">YOUR CREATIVE HEADQUARTERS</p><h1>Make something <em>cinematic.</em></h1><p class="muted">A private production workspace that works offline.</p></div><button class="primary" id="new-project-top">＋ New production</button></div>
+          <div class="stats"><article><small>PRODUCTIONS</small><strong id="stat-projects">0</strong><span>Films and series</span></article><article><small>ASSETS</small><strong id="stat-assets">0</strong><span>Files in your library</span></article><article><small>PLANNED RUNTIME</small><strong id="stat-runtime">0h 0m</strong><span>Across all productions</span></article></div>
+          <div class="section-head"><div><p class="eyebrow">YOUR CREATIVE PIPELINE</p><h2>Recent productions</h2></div><button class="text-btn" data-goto="productions">View all →</button></div>
+          <div class="project-grid" id="recent-projects"></div>
+          <div class="rule-strip"><div><p class="eyebrow">FERU PRODUCTION STANDARD</p><h2>Every story gets room to breathe.</h2></div><div class="rule"><b>40+ min</b><span>Feature films</span></div><div class="rule"><b>25+ min</b><span>Each episode</span></div><div class="rule"><b>6+ eps</b><span>Each series</span></div></div>
+        </section>
+        <section class="view" id="view-productions">
+          <div class="page-head"><div><p class="eyebrow">THE PRODUCTION SLATE</p><h1>All productions</h1><p class="muted">Your stories, stored locally.</p></div><button class="primary" id="new-project">＋ New production</button></div>
+          <div class="toolbar"><input id="project-search" type="search" placeholder="Search productions…" aria-label="Search productions"><span id="production-count" class="muted"></span></div>
+          <div class="project-grid" id="all-projects"></div>
+        </section>
+        <section class="view" id="view-assets">
+          <div class="page-head"><div><p class="eyebrow">YOUR REUSABLE LIBRARY</p><h1>Asset library</h1><p class="muted">Catalogue models, textures, audio and reference files.</p></div><button class="primary" id="import-asset">＋ Import files</button></div>
+          <input id="asset-input" type="file" accept=".glb,.gltf,.obj,.fbx,.png,.jpg,.jpeg,.webp,.wav,.mp3,.mp4,.pdf,.txt" multiple hidden>
+          <div class="notice">Imported files are stored in this browser's local database. Keep original files and make regular backups.</div>
+          <div class="asset-grid" id="asset-list"></div>
+        </section>
+        <section class="view" id="view-standards">
+          <p class="eyebrow">THE FERU RULEBOOK</p><h1>Production standards</h1>
+          <div class="standards-grid"><article><b>Feature films</b><strong>40 minutes or longer</strong><p>Every movie project must have a planned runtime of at least 40 minutes.</p></article><article><b>Series episodes</b><strong>25 minutes or longer</strong><p>Every episode in a series must meet the minimum runtime.</p></article><article><b>Series length</b><strong>6 episodes or more</strong><p>A series cannot be created with fewer than six episodes.</p></article><article><b>Ownership</b><strong>Your files, your responsibility</strong><p>Use assets you have permission to use. Check each asset's licence and retain attribution where required.</p></article></div>
+          <div class="notice"><b>Zero-cost promise:</b> this portable edition contains no paid API integrations, analytics, account system or cloud backend. PWA installation requires the app to be served from HTTPS or localhost.</div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <dialog id="project-dialog"><form method="dialog" id="project-form"><div class="dialog-head"><div><p class="eyebrow">NEW WORK</p><h2>Create a production</h2></div><button class="close" value="cancel" aria-label="Close">×</button></div>
+    <label>Format<select id="project-kind"><option value="Film">Feature film</option><option value="Series">Series</option></select></label>
+    <label>Production title<input id="project-title" maxlength="90" required placeholder="Give your story a name"></label>
+    <label>Genre<input id="project-genre" maxlength="50" placeholder="e.g. Sci-fi / Adventure"></label>
+    <div id="film-fields"><label>Movie runtime (minutes)<input id="project-runtime" type="number" min="40" value="90"></label></div>
+    <div id="series-fields" hidden><label>Episode runtime (minutes)<input id="episode-runtime" type="number" min="25" value="30"></label><label>Number of episodes<input id="episode-count" type="number" min="6" value="6"></label></div>
+    <label>Synopsis<textarea id="project-synopsis" rows="3" placeholder="What is the story about? (optional)"></textarea></label>
+    <p class="form-error" id="form-error" role="alert"></p><div class="dialog-actions"><button class="secondary" value="cancel">Cancel</button><button class="primary" id="save-project" value="default">Create production</button></div>
+  </form></dialog>
+  <dialog id="detail-dialog"><div id="detail-content"></div></dialog>
+  <input type="file" id="restore-input" accept="application/json,.json" hidden>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>

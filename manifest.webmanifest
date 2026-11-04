@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "FERU CINEMA — Independent Film Studio",
+  "short_name": "FERU CINEMA",
+  "description": "An offline-first independent film and series production workspace.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0c1117",
+  "theme_color": "#10151c",
+  "icons": [
+    { "src": "./icons/feru-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
