@@ -1,0 +1,164 @@
+/* FERU STUDIO Stage 1 add-on styles */
+.feru-studio-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.5fr);
+  gap: 18px;
+  align-items: start;
+}
+.feru-model-panel,
+.feru-viewer-panel {
+  min-width: 0;
+  background: #141c25;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 17px;
+}
+.feru-model-list {
+  display: grid;
+  gap: 10px;
+}
+.feru-model-item {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #101820;
+}
+.feru-model-file-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #2a2b25;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 750;
+}
+.feru-model-file-info {
+  min-width: 0;
+}
+.feru-model-file-info b {
+  display: block;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.feru-model-file-info small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+.feru-model-item button {
+  padding: 8px 10px;
+}
+.feru-viewer-frame {
+  width: 100%;
+  min-height: 300px;
+  height: min(58vh, 560px);
+  overflow: hidden;
+  border: 1px solid #303b46;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 38%, #273744, #111922 72%);
+  display: grid;
+  place-items: center;
+}
+.feru-viewer-frame model-viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  --poster-color: transparent;
+}
+.feru-viewer-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+.feru-viewer-placeholder b {
+  color: #e8e5df;
+  font-size: 15px;
+}
+.feru-viewer-symbol {
+  color: var(--gold);
+  font-size: 42px;
+}
+.feru-studio-status {
+  min-height: 20px;
+  margin: 10px 0;
+  color: #b7c5b2;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.feru-studio-error {
+  color: #ffb4a8;
+}
+.feru-viewer-controls {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.feru-animation-control {
+  margin: 0;
+  color: #c5cdd4;
+  font-size: 11px;
+}
+.feru-animation-control select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px;
+  border: 1px solid #36424e;
+  border-radius: 8px;
+  background: #0e151c;
+  color: #f3f1ec;
+}
+.feru-control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.feru-control-buttons button {
+  flex: 1 1 120px;
+}
+.feru-studio-footnote {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .feru-studio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .feru-studio-head {
+    align-items: flex-start;
+  }
+  .feru-model-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+  .feru-model-item button {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .feru-viewer-frame {
+    min-height: 260px;
+    height: 52vh;
+  }
+  .feru-viewer-frame model-viewer {
+    min-height: 260px;
+  }
+  }
