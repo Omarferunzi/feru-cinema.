@@ -1,0 +1,281 @@
+/* FERU STUDIO Stage 2 — additive styles only */
+.feru-builder-panel {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #101820;
+}
+.feru-builder-panel[hidden] {
+  display: none !important;
+}
+.feru-builder-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.feru-builder-heading h2 {
+  margin: 0 0 7px;
+}
+.feru-builder-heading p {
+  margin-top: 0;
+}
+.feru-builder-notice {
+  padding: 11px 13px;
+  margin-bottom: 15px;
+  border: 1px solid #514533;
+  border-radius: 9px;
+  background: #211e18;
+  color: #d8c5a7;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.feru-builder-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+.feru-builder-sidebar {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+.feru-builder-card {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #141c25;
+}
+.feru-builder-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+.feru-builder-help {
+  margin: 5px 0 10px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.feru-builder-assets,
+.feru-object-list {
+  display: grid;
+  gap: 7px;
+}
+.feru-builder-asset {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0e151c;
+}
+.feru-builder-asset span {
+  min-width: 0;
+}
+.feru-builder-asset b,
+.feru-builder-asset small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.feru-builder-asset b {
+  font-size: 10px;
+  line-height: 1.4;
+}
+.feru-builder-asset small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.feru-builder-asset button {
+  padding: 7px 9px;
+}
+.feru-object-row {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0e151c;
+  color: #e8e5df;
+  text-align: left;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.feru-object-row.selected {
+  border-color: var(--gold);
+  background: #29251f;
+}
+.feru-danger-button {
+  width: 100%;
+  margin-top: 9px;
+  padding: 9px 10px;
+  border: 1px solid #754b45;
+  border-radius: 8px;
+  background: #2a1a1a;
+  color: #f0c0b8;
+  font-size: 10px;
+}
+.feru-builder-label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #c5cdd4;
+  font-size: 10px;
+}
+.feru-builder-card input,
+.feru-builder-card select {
+  width: 100%;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid #36424e;
+  border-radius: 8px;
+  background: #0e151c;
+  color: #f3f1ec;
+  font-size: 11px;
+}
+.feru-builder-action {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid #a98457;
+  border-radius: 8px;
+  background: #a98457;
+  color: #111820;
+  font-weight: 700;
+  font-size: 11px;
+}
+.feru-builder-card > button.secondary {
+  width: 100%;
+  margin-top: 8px;
+}
+.feru-builder-main {
+  min-width: 0;
+}
+.feru-builder-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+.feru-tool-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.feru-tool {
+  min-width: 65px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #141c25;
+  color: #e8e5df;
+  font-size: 10px;
+}
+.feru-tool.active {
+  border-color: var(--gold);
+  background: #30291f;
+  color: #f3d6ad;
+}
+.feru-scene-viewport {
+  position: relative;
+  width: 100%;
+  height: min(62vh, 580px);
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid #303b46;
+  border-radius: 10px;
+  background: #111922;
+  touch-action: pan-y;
+}
+.feru-scene-viewport canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.feru-scene-loading {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  padding: 20px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+.feru-builder-inspector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0 5px;
+}
+.feru-builder-inspector b {
+  display: block;
+  color: #eeeae3;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.feru-builder-inspector p {
+  max-width: 440px;
+}
+.feru-light-control {
+  display: grid;
+  grid-template-columns: auto minmax(100px, 150px);
+  align-items: center;
+  gap: 9px;
+  color: #c5cdd4;
+  font-size: 10px;
+}
+.feru-light-control input {
+  width: 100%;
+}
+.feru-builder-footnote {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+@media (max-width: 850px) {
+  .feru-builder-layout {
+    grid-template-columns: 1fr;
+  }
+  .feru-builder-sidebar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .feru-builder-sidebar .feru-builder-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 560px) {
+  .feru-builder-panel {
+    padding: 11px;
+  }
+  .feru-builder-heading {
+    flex-direction: column;
+  }
+  .feru-builder-sidebar {
+    grid-template-columns: 1fr;
+  }
+  .feru-builder-sidebar .feru-builder-card:last-child {
+    grid-column: auto;
+  }
+  .feru-scene-viewport {
+    min-height: 280px;
+    height: 48vh;
+  }
+  .feru-builder-toolbar {
+    align-items: stretch;
+  }
+  .feru-tool-group {
+    width: 100%;
+  }
+  .feru-tool-group > * {
+    flex: 1;
+  }
+  }
